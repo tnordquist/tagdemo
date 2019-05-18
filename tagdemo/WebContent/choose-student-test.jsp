@@ -29,9 +29,13 @@
 			<tr>
 				<td>${tempStudent.firstName}</td>
 				<td>${tempStudent.lastName}</td>
-				<td><c:if test="${tempStudent.goldCustomer}"> Special Discount
-						</c:if> <c:if test="${not tempStudent.goldCustomer}"> -
-						</c:if>
+				<td><c:choose>
+						<c:when test="${tempStudent.goldCustomer}"> Special Discount
+						</c:when>
+						<c:otherwise>
+						no soup for you! 
+						</c:otherwise>
+					</c:choose>
 			</tr>
 		</c:forEach>
 
